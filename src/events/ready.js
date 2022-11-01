@@ -26,7 +26,7 @@ module.exports = {
 		/* Registering slash commands */
 		client.commands = new Collection();
 		const data = [];
-
+		// Command handler
 		const categories = fs.readdirSync(`${__dirname}/../commands/`);
 		for (const category of categories) {
 			const commandFiles = fs.readdirSync(`${__dirname}/../commands/${category}`).filter(file => file.endsWith('.js'));
