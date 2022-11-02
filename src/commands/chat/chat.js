@@ -25,12 +25,11 @@ module.exports = {
 
         require('dotenv').config();
         
-        let bid = process.env['bid']
-        let key = process.env['key']
-        
+        let url = process.env['url']
         let uid = interaction.member.id
+        
         try {
-            await axios.get(`http://api.brainshop.ai/get?bid=${bid}&key=${key}&uid=[${uid}]&msg=[${msg}]`)
+            await axios.get(`${url}`)
                 .then(res => {
                     let data = res.data;
                     let reply = data.cnt
