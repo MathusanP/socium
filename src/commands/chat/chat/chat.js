@@ -25,7 +25,7 @@ module.exports = {
 
         require('dotenv').config();
         
-        let url = process.env['url']
+        let url = process.env['url'];
         
         let uid = interaction.member.id
         try {
