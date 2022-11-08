@@ -21,15 +21,15 @@ module.exports = {
         ),
     error: false,
     execute: async ({ interaction }) => {
-        let msg = interaction.options.getString("input")
+        let user_input = interaction.options.getString("input")
 
         require('dotenv').config();
         
         let bid = process.env['bid']
         let key = process.env['key']
-        let uid = interaction.member.id
+        let user_id = interaction.member.id
         try {
-            await axios.get(`http://api.brainshop.ai/get?bid=${bid}&key=${key}uid=[${uid}]&msg=[${msg}]`)
+            await axios.get(`http://api.brainshop.ai/get?bid=${bid}&key=${key}&uid=${user_id}&msg=${user_input}`)
                 .then(res => {
                     let data = res.data;
                     let reply = data.cnt
