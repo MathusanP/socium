@@ -29,7 +29,7 @@ module.exports = {
         
         let uid = interaction.member.id
         try {
-            await axios.get(url)
+            await axios.get(`${url}`)
                 .then(res => {
                     let data = res.data;
                     let reply = data.cnt
