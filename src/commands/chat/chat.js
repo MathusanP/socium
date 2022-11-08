@@ -29,7 +29,7 @@ module.exports = {
         let key = process.env['key']
         let uid = interaction.member.id
         try {
-            await axios.get(`http://api.brainshop.ai/get?bid=${bid}&key=${key}uid=[${uid}]&msg=[${msg]}`)
+            await axios.get(`http://api.brainshop.ai/get?bid=${bid}&key=${key}uid=[${uid}]&msg=[${msg}]`)
                 .then(res => {
                     let data = res.data;
                     let reply = data.cnt
